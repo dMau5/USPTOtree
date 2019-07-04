@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Title: ChemAxon mjs-mini
+Implementation-Version: 1.0.0-SNAPSHOT
+Specification-Vendor: ChemAxon Ltd.
+Specification-Title: ChemAxon mjs-mini
+Specification-Version: 1.0.0-SNAPSHOT
+Implementation-Vendor: ChemAxon Ltd.
+

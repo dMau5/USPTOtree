@@ -1,0 +1,37 @@
+{
+  "_from": "marvinjs",
+  "_id": "marvinjs@19.4.0",
+  "_inBundle": false,
+  "_integrity": "sha1-KerLOahQTxOEqeX/eNG6y+0Zfo8=",
+  "_location": "/marvinjs",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "marvinjs",
+    "name": "marvinjs",
+    "escapedName": "marvinjs",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://artifacts.chemaxon.com:443/artifactory/api/npm/npm-release/marvinjs/-/marvinjs-19.4.0.tgz",
+  "_shasum": "29eacb39a8504f1384a9e5ff78d1bacbed197e8f",
+  "_spec": "marvinjs",
+  "_where": "/data/slave/marvinjsci/workspace/marvinjs-webjar",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Marvin JS",
+  "ignore": [],
+  "license": {
+    "type": "ChemAxon End-User License Agreement / End User Subscription Agreement - EUSA",
+    "url": "https://chemaxon.com/eula or https://chemaxon.com/eusa"
+  },
+  "name": "marvinjs",
+  "private": false,
+  "version": "19.4.0"
+}

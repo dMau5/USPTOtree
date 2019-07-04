@@ -1,0 +1,39 @@
+body {
+    font-size: 130%;
+    font-family: arial;
+}
+
+.item {
+    width:500px;
+    margin:100px auto;
+    height: 400px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.sc:hover{
+    transform:scale(1.6); /*Webkit: Scale up image to 1.2x original size*/
+    opacity: 1;
+    background: white;
+}
+
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+button {
+    border: 1px black solid;
+    border-radius: 3px;
+    padding: 5px;
+    }
+
+button:hover {
+    background: silver;
+}
+
+div.column {
+    position: fixed;
+    display: inline-block;
+    top: 10px;
+}

@@ -1,0 +1,276 @@
+[INFO] logger started at Fri Feb 15 16:16:02 MSK 2019
+[INFO] executable name: /home/dinar/Загрузки/mjsws_unix_19.4.sh
+[INFO] install4j version: 7.0.9 (build 7273)
+[INFO] Properties: 
+-- listing properties --
+java.runtime.name=Java(TM) SE Runtime Environment
+exe4j.moduleName=/home/dinar/Загрузки/mjsws_unix_19.4.sh
+sun.boot.library.path=/usr/lib/jvm/java-8-oracle/jre/lib/amd64
+java.vm.version=25.201-b09
+java.vm.vendor=Oracle Corporation
+java.vendor.url=http://java.oracle.com/
+path.separator=:
+java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+file.encoding.pkg=sun.io
+user.country=RU
+sun.java.launcher=SUN_STANDARD
+sun.os.patch.level=unknown
+install4j.exeDir=/home/dinar/Загрузки/
+java.vm.specification.name=Java Virtual Machine Specification
+user.dir=/home/dinar/Загрузки/mjsws_unix_19.4....
+java.runtime.version=1.8.0_201-b09
+java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment
+i4jv=0
+java.endorsed.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/en...
+os.arch=amd64
+java.io.tmpdir=/tmp
+line.separator=
+
+java.vm.specification.vendor=Oracle Corporation
+os.name=Linux
+exe4j.totalDataLength=6435618
+sun.java2d.noddraw=true
+sun.jnu.encoding=UTF-8
+java.library.path=/home/dinar/Загрузки/mjsws_unix_19.4....
+sun.awt.enableExtraMouseButtons=true
+java.specification.name=Java Platform API Specification
+java.class.version=52.0
+sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+os.version=4.15.0-43-generic
+i4j.vpt=true
+user.home=/home/dinar
+install4j.cwd=/home/dinar/Загрузки
+user.timezone=Europe/Moscow
+java.awt.printerjob=sun.print.PSPrinterJob
+java.specification.version=1.8
+install4j.jvmDir=/usr/lib/jvm/java-8-oracle/jre
+file.encoding=UTF-8
+user.name=dinar
+java.class.path=i4jruntime.jar
+java.vm.specification.version=1.8
+sun.arch.data.model=64
+java.home=/usr/lib/jvm/java-8-oracle/jre
+sun.java.command=com.install4j.runtime.launcher.UnixLa...
+java.specification.vendor=Oracle Corporation
+user.language=ru
+awt.toolkit=sun.awt.X11.XToolkit
+java.vm.info=mixed mode
+java.version=1.8.0_201
+java.ext.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/ex...
+sun.boot.class.path=/usr/lib/jvm/java-8-oracle/jre/lib/re...
+java.vendor=Oracle Corporation
+install4j.appDir=/home/dinar/Загрузки/
+file.separator=/
+java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+sun.cpu.endian=little
+sun.io.unicode.encoding=UnicodeLittle
+sun.font.fontmanager=sun.awt.X11FontManager
+sun.desktop=gnome
+sun.cpu.isalist=
+[INFO] Variable changed: sys.resolveUserSpecificInstallationDir=false[class java.lang.String]
+[INFO] com.install4j.runtime.beans.actions.misc.RequestPrivilegesAction [ID 13]: Execute action
+       Property allRequested: false
+       Property failIfNotObtainedMac: true
+       Property failIfNotObtainedWin: true
+       Property failIfNotRootUnix: false
+       Property obtainIfAdminMac: false
+       Property obtainIfAdminWin: true
+       Property obtainIfNormalMac: false
+       Property obtainIfNormalWin: false
+       Property rollbackSupported: false
+       Property updateInstallationDirectory: true
+       Variable changed: sys.resolveUserSpecificInstallationDir=true[class java.lang.Boolean]
+       Execute action successful after 2 ms
+[INFO] com.install4j.runtime.beans.screens.StartupScreen [ID 1]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.WelcomeScreen [ID 2]: Show screen
+[INFO] com.install4j.runtime.beans.screens.WelcomeScreen [ID 2]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.InstallationDirectoryScreen [ID 4]: Show screen
+       checking writable with maximum
+[INFO] com.install4j.runtime.beans.actions.misc.LoadResponseFileAction [ID 5]: Execute action
+       Property excludedVariables: [sys.installationDir]
+       Property file: null
+       Property overwriteStrategy: Do not overwrite command line
+       Property registerForResponseFile: true
+       Property rollbackSupported: false
+       Response file /home/dinar/mjs-webservice/.install4j/response.varfile does not exist
+       Execute action successful after 1 ms
+[INFO] com.install4j.runtime.beans.screens.InstallationDirectoryScreen [ID 4]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.StandardProgramGroupScreen [ID 7]: Show screen
+       Variable changed: sys.symlinkDir=/usr/local/bin[class java.lang.String]
+       Variable changed: sys.programGroupDisabled=false[class java.lang.Boolean]
+[INFO] com.install4j.runtime.beans.screens.StandardProgramGroupScreen [ID 7]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.InstallationScreen [ID 8]: Show screen
+[INFO] com.install4j.runtime.beans.actions.InstallFilesAction [ID 9]: Execute action
+       Property directoryResolverScript: null
+       Property fileFilterScript: null
+       Property sizeCalculatorScript: null
+       Property checkFreeSpace: true
+       Property delay: false
+       Property installRuntime: true
+       Property rollbackSupported: true
+       Property saveDownloadedFiles: false
+       Property showFileNames: true
+       Property triggerReboot: true
+       Property updateBundledJre: true
+       Property validateApplicationId: false
+       Install file: /home/dinar/mjs-webservice/.install4j/2bfa42ba.lprop; size: 68 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/.install4j/2cb21379.lprop; size: 68 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/.install4j/abbc4f79.lprop; size: 68 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/.install4j/run-mjs-webservice.png; size: 6518 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: Always, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/.install4j/uninstall.png; size: 6648 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/config/application.properties; size: 198 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 644, overwriteMode: Never, shared: false, uninstallMode: Never, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/libs/mjs-mini-1.0.0-SNAPSHOT.jar; size: 4047347 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/mjs-webservice; size: 16127 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 755, overwriteMode: If newer otherwise ask, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/mjs-webservice.vmoptions; size: 243 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 644, overwriteMode: Never, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/run-mjs-webservice; size: 12901 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 755, overwriteMode: If newer otherwise ask, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/run-mjs-webservice.vmoptions; size: 243 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 644, overwriteMode: Never, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/static/LICENSE.md; size: 453 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/static/LICENSE.txt; size: 450 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/css/doc.css; size: 4207 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/css/example-edit-images.css; size: 2305 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/css/index.css; size: 25442 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/css/substructuresearch.css; size: 564 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/demo.html; size: 1405 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/desktop.html; size: 1391 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/README.html; size: 368 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/compatibility.html; size: 2328 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/dev/embed.html; size: 7883 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/dev/webservices.html; size: 6631 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/images/no.png; size: 699 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/images/yes.png; size: 747 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/index.html; size: 945 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/installationguide.html; size: 4272 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/manual/index.html; size: 160 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/docs/troubleshoot.html; size: 7845 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/editor.html; size: 1270 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/editorws.html; size: 1366 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/abbreviations/demoabbrev.json; size: 2916 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/abbreviations/myabbreviations.mrv; size: 2187 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/abbreviations/myabbreviations.sdf; size: 1478 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/checker/example-checker.html; size: 18145 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/checker/molchange.js; size: 1313 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/demo.html; size: 16136 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/eflow/alternative-eflow.html; size: 1138 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-abbrevs.html; size: 5825 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-addbutton.html; size: 2388 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-addtemplate.html; size: 7266 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-copyasmrv.html; size: 4695 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-couple-editors.html; size: 9188 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-create-abbreviation.html; size: 5292 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-create-image.html; size: 15035 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-create-template.html; size: 6098 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-customize-service.html; size: 4412 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-defaulttool.html; size: 4110 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-edit-images.html; size: 18561 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-get-selection.html; size: 6541 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-getimage.html; size: 4411 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-getmol.html; size: 3435 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-highlight-by-index.html; size: 6503 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-highlight.html; size: 9655 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-lazyinit.html; size: 1234 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-lonepair.html; size: 7796 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-more-images-immediately.html; size: 7880 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-qrcode.html; size: 12349 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-reaction.html; size: 3772 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-removedefaultservicefromtoolbar.html; size: 4387 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-selection.html; size: 12230 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-setmol.html; size: 9223 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-templates-default.html; size: 1755 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-templates.html; size: 1586 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-templates_with_displaysettings.html; size: 3782 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-toolbars.html; size: 3585 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/example-toolbars_with_displaysettings.html; size: 3773 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/form/echo.php; size: 248 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/form/example-submit-form.html; size: 1825 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/images/custom-icon.png; size: 918 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/images/qr.png; size: 630 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/images/search.png; size: 1125 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/index.html; size: 2737 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/jqueryui/dialog.html; size: 2790 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/properties/example-set-properties.html; size: 8940 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/properties/xmlindent.js; size: 1033 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/query/substructuresearch.html; size: 4018 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/examples/textbox/textbox.html; size: 1086 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/gui/921A1238D7AA98A17ECCCC3531E2AFC6.cache.js; size: 1437300 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/gui/FDD4CCF60B6B099FFCE46E616BE8A8F6.cache.txt; size: 889265 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/gui/clear.cache.gif; size: 43 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/gui/css/editor.css; size: 1042 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/gui/css/editor.min.css; size: 766 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/gui/gui.nocache.js; size: 7291 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/gui/lib/promise-1.0.0.min.js; size: 5192 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/index.html; size: 1373 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/js/lib/jquery-1.9.1.min.js; size: 92629 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/js/lib/qrcode/qrcode.min.js; size: 19927 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/js/lib/rainbow/github.css; size: 1539 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/js/lib/rainbow/rainbow-custom.min.js; size: 7341 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/js/lib/rainbow/twilight.css; size: 1117 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/js/marvinjslauncher.js; size: 3073 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/js/util.js; size: 4366 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/js/webservices.js; size: 793 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/jsdoc.html; size: 31878 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/licenses/3rdparty_license.html; size: 2745 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/licenses/MIT_License.txt; size: 1078 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/licenses/apache.txt; size: 9698 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/licenses/bouncycastle.txt; size: 1119 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/licenses/es6_promise_license.txt; size: 1082 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/licenses/jquery.txt; size: 1098 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/licenses/qrcode_license.txt; size: 1098 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/marvinpack.html; size: 431 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/package.json; size: 1042 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/templates/default_templates.json; size: 6799 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/templates/default_templates.mrv; size: 3528 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/templates/default_templates_with_naphtalane.json; size: 8869 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/templates/empty.mrv; size: 34 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/static/templates/mytemplates.mrv; size: 4667 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/uninstall; size: 13550 bytes; exists: false
+       File options set to: [fileTime: Mon Feb 11 11:49:22 MSK 2019, mode: 700, overwriteMode: If newer otherwise ask, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/.install4j/inst_jre.cfg; size: 31 bytes; exists: false
+       File options set to: [fileTime: Fri Feb 15 16:16:24 MSK 2019, mode: 644, overwriteMode: Always, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/.install4j/i4jruntime.jar; size: 1809896 bytes; exists: false
+       File options set to: [fileTime: Fri Feb 15 16:16:24 MSK 2019, mode: 644, overwriteMode: Always, shared: false, uninstallMode: Always, delayIfNecessary: false]
+       Install file: /home/dinar/mjs-webservice/.install4j/MessagesDefault; size: 33678 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/.install4j/i4jparams.conf; size: 57560 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/.install4j/stats.properties; size: 805 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/.install4j/user.jar; size: 8390 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/.install4j/i4j_extf_1_1h0gyew_18gg8kx@2x.png; size: 15419 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/.install4j/i4j_extf_0_1h0gyew.utf8; size: 33678 bytes; exists: false
+       Install file: /home/dinar/mjs-webservice/.install4j/i4j_extf_1_1h0gyew_18gg8kx.png; size: 9202 bytes; exists: false
+       Execute action successful after 173 ms
+[INFO] com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction [ID 10]: Execute action
+       Property categories: Application
+       Property linkDirectory: /usr/local/bin
+       Property programGroupEntryConfigs: []
+       Property programGroupName: 
+       Property uninstallerMenuName: Marvin JS Webservices Uninstaller
+       Property addDefaultLauncherLinks: true
+       Property addUninstaller: true
+       Property allUsers: true
+       Property failForSymlinksNotCreated: false
+       Property rollbackSupported: true
+       Property unixMenuEntries: true
+       Property unixSymlinks: true
+       Variable changed: sys.programGroupName=Marvin JS Webservices[class java.lang.String]
+[ERROR] com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction [ID 10]: /usr/local/bin/run-mjs-webservice
+[INFO] com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction [ID 10]: Execute action successful after 17 ms
+[INFO] com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction [ID 11]: Execute action
+       Property icon: null
+       Property iconSource: Installer icon
+       Property itemName: Marvin JS Webservices 19.4.0
+       Property persistentProperties: {}
+       Property rollbackSupported: true
+       Execute action successful after 1 ms
+[INFO] com.install4j.runtime.beans.screens.InstallationScreen [ID 8]: Rollback barrier reached
+       command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.FinishedScreen [ID 12]: Show screen
+[INFO] com.install4j.runtime.beans.screens.FinishedScreen [ID 12]: command: finish
+       cleaning up
+       Finished

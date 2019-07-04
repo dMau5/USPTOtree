@@ -1,0 +1,6 @@
+# install4j response file for Marvin JS Webservices 19.4.0
+sys.adminRights$Boolean=false
+sys.installationDir=/home/dinar/mjs-webservice
+sys.languageId=en
+sys.programGroupDisabled$Boolean=false
+sys.symlinkDir=/usr/local/bin

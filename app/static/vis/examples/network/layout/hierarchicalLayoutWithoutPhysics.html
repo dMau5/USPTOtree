@@ -1,0 +1,104 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hierarchical Layout without Physics</title>
+    <script type="text/javascript" src="../../.."></script>
+    <script type="text/javascript" src="../datasources/largeHierarchicalDataset.js"></script>
+    <link href="../../../dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #network{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="network"></div>
+<script>
+    var nodeIds, shadowState, nodesArray, nodes, edgesArray, edges, network;
+    // create an array with nodes
+    var json = '{"nodes": [{"id": 1, "label": "temperature: 850\\nreactants: aluminum oxide, ammonia\\n",\n' +
+        '                 "color": {"border": "black", "background": "white"}, "shape": "box", "size": 50}, {"id": 2,\n' +
+        '                                                                                                    "label": "stage_reactants: recorcinol\\nreactants: sulfuryl difluoride, triethylamine\\nsolvents: dimethyl sulfoxide\\n",\n' +
+        '                                                                                                    "color": {\n' +
+        '                                                                                                        "border": "black",\n' +
+        '                                                                                                        "background": "white"},\n' +
+        '                                                                                                    "shape": "box",\n' +
+        '                                                                                                    "size": 50},\n' +
+        '                {"id": 3, "image": "mols/mol340.png", "shape": "image", "size": 50},\n' +
+        '                {"id": 4, "label": "temperature: 450\\npressure: 760.051\\nreactants: hydrogen\\n",\n' +
+        '                 "color": {"border": "black", "background": "white"}, "shape": "box", "size": 50}, {"id": 5,\n' +
+        '                                                                                                    "label": "temperature: 40\\npressure: 120012\\ntime: 8\\nreactants: copper dichloride, palladium dichloride\\nsolvents: methanol, carbon dioxide\\n",\n' +
+        '                                                                                                    "color": {\n' +
+        '                                                                                                        "border": "black",\n' +
+        '                                                                                                        "background": "white"},\n' +
+        '                                                                                                    "shape": "box",\n' +
+        '                                                                                                    "size": 50},\n' +
+        '                {"id": 6, "image": "mols/mol294.png", "shape": "image", "size": 50},\n' +
+        '                {"id": 7, "label": "reactants: n-butyllithium, potassium 2-methylbutan-2-olate\\nsolvents: hexane\\n",\n' +
+        '                 "color": {"border": "black", "background": "white"}, "shape": "box", "size": 50},\n' +
+        '                {"id": 8, "image": "mols/mol322.png", "shape": "image", "size": 50},\n' +
+        '                {"id": 9, "image": "mols/mol307.png", "shape": "image", "size": 50},\n' +
+        '                {"id": 10, "image": "mols/mol276.png", "shape": "image", "size": 50},\n' +
+        '                {"id": 11, "label": "temperature: 800\\nreactants: aluminum oxide, ammonia\\n",\n' +
+        '                 "color": {"border": "black", "background": "white"}, "shape": "box", "size": 50}, {"id": 12,\n' +
+        '                                                                                                    "label": "temperature: 450\\npressure: 21001.7\\ntime: 0.75\\nreactants: hydrogen\\ncatalysts: nickel(II) oxide, aluminum oxide, molybdenum(VI) oxide\\n",\n' +
+        '                                                                                                    "color": {\n' +
+        '                                                                                                        "border": "black",\n' +
+        '                                                                                                        "background": "white"},\n' +
+        '                                                                                                    "shape": "box",\n' +
+        '                                                                                                    "size": 50},\n' +
+        '                {"id": 13, "image": "mols/mol332.png", "shape": "image", "size": 50},\n' +
+        '                {"id": 14, "image": "mols/mol267.png", "shape": "image", "size": 50},\n' +
+        '                {"id": 15, "label": "reactants: AsI*CH\\n", "color": {"border": "black", "background": "white"},\n' +
+        '                 "shape": "box", "size": 50}],\n' +
+        '      "edges": [{"from": 1, "to": 10, "color": {"color": "red"}}, {"from": 2, "to": 6, "color": {"color": "red"}},\n' +
+        '                {"from": 3, "to": 2, "color": {"color": "blue"}}, {"from": 4, "to": 6, "color": {"color": "red"}},\n' +
+        '                {"from": 5, "to": 6, "color": {"color": "red"}}, {"from": 6, "to": 1, "color": {"color": "blue"}},\n' +
+        '                {"from": 7, "to": 6, "color": {"color": "red"}}, {"from": 8, "to": 4, "color": {"color": "blue"}},\n' +
+        '                {"from": 9, "to": 7, "color": {"color": "blue"}}, {"from": 9, "to": 12, "color": {"color": "blue"}},\n' +
+        '                {"from": 11, "to": 10, "color": {"color": "red"}}, {"from": 12, "to": 6, "color": {"color": "red"}},\n' +
+        '                {"from": 13, "to": 15, "color": {"color": "blue"}}, {"from": 14, "to": 11, "color": {"color": "blue"}},\n' +
+        '                {"from": 14, "to": 5, "color": {"color": "blue"}}, {"from": 15, "to": 6, "color": {"color": "red"}}]}';
+
+    var d = JSON.parse(json); // преобразовали строку в объект
+    // теперь user -- это JS-объект с данными из строки
+    nodesArray =  d.nodes;
+    nodes = new vis.DataSet(nodesArray);
+
+    // create an array with edges
+    edgesArray = d.edges;
+    edges = new vis.DataSet(edgesArray);
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    // create a network
+    var container = document.getElementById('network');
+    var options = {
+        layout: {
+            hierarchical: {
+                direction: "LR",
+                sortMethod: "directed",
+                levelSeparation: 330,
+                nodeSpacing: 70,
+            }
+        },
+        interaction: {dragNodes :true},
+        physics: {
+            enabled: false
+        },
+        configure: {
+            filter: function (option, path) {
+                if (path.indexOf('hierarchical') !== -1) {
+                    return true;
+                }
+                return false;
+            },
+            showButton:false
+        }
+    };
+    network = new vis.Network(container, data, options);
+</script>
+</body>
+</html>

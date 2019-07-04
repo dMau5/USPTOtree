@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose the molecule</title>
+    <link type="text/css" rel="stylesheet" href='{{ url_for("static", filename = "middle.css") }}' />
+</head>
+<body>
+
+<div class="column">
+    <button type='button' onclick="window.location.href = '/index'">Go home</button>
+</div>
+{% for molecule, tan, reactions in molecules %} {% if reactions %}
+{% set a = url_for(tree, target=molecule.id, available=available, reactions=reactions, stages=stages) %}
+{% else %} {% set a = url_for(tree, target=molecule.id, available=available, stages=stages) %} {% endif %}
+<div class='item'>
+    <center> Tanimoto index: {{tan}}</center>
+    <a href="{{a}}">
+        <div class="sc">
+            {{molecule.structure.depict() | safe}}
+        </div>
+    </a>
+</div>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Enter Molecule</title>
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'mjs/static/css/doc.css') }}" />
+	<script src="{{ url_for('static', filename = 'mjs/static/js/lib/jquery-1.9.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'mjs/static/js/lib/rainbow/rainbow-custom.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'mjs/static/gui/lib/promise-1.0.0.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'mjs/static/js/marvinjslauncher.js') }}"></script>
+	<script language="JavaScript">
+
+		var marvinSketcherInstance;
+
+		$(document).ready(function handleDocumentReady (e) {
+			MarvinJSUtil.getEditor("#sketch").then(function (sketcherInstance) {
+				marvinSketcherInstance = sketcherInstance;
+			},function (error) {
+				alert("Cannot retrieve sketcher instance from iframe:"+error);
+			});
+		});
+
+		function magic() {
+			return marvinSketcherInstance.exportStructure("mrv").then(function(source) {
+				var form = document.getElementById('mol_form');
+				var input = document.createElement('input');
+				var stage = document.getElementById('stage');
+				var sub = document.getElementById('sub');
+				var available = document.getElementById('available');
+				if (sub.checked) {
+					sub = 1
+				}
+				else {
+					sub = 0
+				}
+				if (available.checked) {
+					available = 0
+				}
+				else {
+					available = 1
+				}
+				input.type = 'hidden';
+				input.name = 'data';
+				input.value = JSON.stringify({source:source, stage:stage.value, substructure:sub, available:available});
+				form.appendChild(input);
+				return true;
+			}, function(error) {
+				alert("Molecule export failed:"+error);
+				return false;
+			});
+		}
+
+	</script>
+</head>
+<body>
+		<div class="resizable">
+			<iframe src="{{ url_for('static', filename = 'mjs/static/editorws.html') }}" id="sketch" class="sketcher-frame"></iframe>
+		</div><br>
+		<div>
+			<form method="post" id="mol_form"  action="{{ url_for('.post') }}" onsubmit="return magic()">
+				<p class="label">
+					Stages<input id="stage" type="number" value="1" min="1" max="100" step="1">
+					<label for="sub">Substructure</label>
+					<input type="checkbox" id="sub"/>
+					<label for="available">Don't break on available</label>
+					<input type="checkbox" id="available"/>
+					<input class="press" type="submit" value="Search"/>
+				</p>
+			</form>
+		</div>
+</body>
+</html>
