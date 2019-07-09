@@ -1,3 +1,7 @@
+body {
+    font-family: fantasy;
+}
+
 .vis .overlay {
     position: absolute;
     top: 0;
@@ -607,10 +611,10 @@ div.vis-network div.vis-manipulation div.vis-separator-line {
     margin: 0 7px 0 15px
 }
 
-
 #selection {
-    position: absolute;
-    right: 0;
+    position: fixed;
+    top:10px;
+    right: 0px;
     padding: 0 5px;
     border-left: 1px solid blue;
     width: 20%;
@@ -620,6 +624,7 @@ button {
     border: 1px black solid;
     border-radius: 3px;
     padding: 5px;
+    margin: 0 5px
     }
 
 button:hover {
@@ -627,6 +632,7 @@ button:hover {
 }
 
 .column {
+    position: fixed;
+    top:10px;
     display: inline-block;
-    margin-right: 10px;
 }
