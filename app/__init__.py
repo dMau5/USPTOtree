@@ -32,7 +32,7 @@ def index():
                 return render_template('index.html')
             elif 'pass' in forma:
                 data = loads(request.form['pass'])
-                if data['pass'] == 'dinar1995':
+                if data['pass'] == 'password':
                     load_schema(getenv('DB_SCHEMA', 'name'), user=getenv('DB_USER', 'user'),
                                 password=getenv('DB_PASS', 'password'), host=getenv('DB_HOST', 'host'),
                                 database=getenv('DB_NAME', 'name'), port=getenv('DB_PORT', 'port'))
