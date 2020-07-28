@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Error</title>
-    <style>
-        button {
-            position: static;
-            border: 1px black solid;
-            border-radius: 3px;
-            padding: 5px;
-            background: white;
-            }
-        button:hover {
-            background: silver;
-        }
-    </style>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'index.css') }}" />
+    <script language="JavaScript">
+		function error() {
+		    var form = document.getElementById('error');
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'error';
+            input.value = JSON.stringify({error: 0});
+            form.appendChild(input);
+            return true;
+		}
+	</script>
 </head>
 <body>
-    <button type='button' onclick="window.location.href = '/index'">Go back</button>
-    <h>Not found!</h>
+    <form method="post" id="error" action="{{ url_for('.index') }}" onsubmit="return error()"></form>
+    <h2><input type="submit" form="error" value="Go home"></h2>
+    <p>
+        <h1>Not found!</h1>
+        Process finished with error: {{ error }}
+    </p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'index.css') }}" />
+    <script>
+		function check() {
+            var form = document.getElementById('database');
+            var input = document.createElement('input');
+            var pass = document.getElementById('pass');
+            input.type = 'hidden';
+            input.name = 'pass';
+            input.value = JSON.stringify({pass:pass.value});
+            form.appendChild(input);
+            return true
+		}
+    </script>
+</head>
+<body>
+	<div>
+        <h1>Please, enter password for Reaxys database</h1>
+        <form method="post" id="database" action="{{ url_for('.index') }}" onsubmit="return check()"></form>
+        <label for="pass">Password:</label><br>
+        <input type="password" id="pass" autocomplete="current-password" minlength="1" maxlength="9" size="9"
+               pattern="[0-9a-zA-Z]" required><br>
+    </div>
+    <div>
+        <h2><input type="submit" form="database" value="Submit"></h2>
+    </div>
+</body>
+</html>

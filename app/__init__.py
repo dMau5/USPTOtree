@@ -1,11 +1,12 @@
 from CGRdb import Molecule, load_schema
 from CGRdb.database import MoleculeReaction
-from CGRtools.files import MRVread
+from CGRtools import MRVRead
 from flask import Flask, render_template, request, redirect, url_for, abort
 from io import BytesIO
 from os import getenv
 from json import loads
 from pony.orm import db_session
+from traceback import format_exc
 from .watch import substructure, similarity, paths_of_synthesis_for_substructure_search, \
     paths_of_synthesis_for_target_molecule
 
@@ -14,42 +15,61 @@ app = Flask(__name__)
 from .utils.list_converter import ListConverter
 
 app.url_map.converters['list'] = ListConverter
-load_schema(getenv('DB_SCHEMA'), user=getenv('DB_USER', 'postgres'), password=getenv('DB_PASS'),
-            host=getenv('DB_HOST', 'localhost'), database=getenv('DB_NAME', 'postgres'), port=getenv('DB_PORT', 5432))
 
 
 @app.route("/")
-@app.route("/index")
+@app.route("/check")
+def check():
+    return render_template('check.html')
+
+
+@app.route("/index", methods=['POST'])
 def index():
-    return render_template('index.html')
+    try:
+        forma = request.form
+        if forma:
+            if 'error' in forma:
+                return render_template('index.html')
+            elif 'pass' in forma:
+                data = loads(request.form['pass'])
+                if data['pass'] == 'dinar1995':
+                    load_schema(getenv('DB_SCHEMA', 'name'), user=getenv('DB_USER', 'user'),
+                                password=getenv('DB_PASS', 'password'), host=getenv('DB_HOST', 'host'),
+                                database=getenv('DB_NAME', 'name'), port=getenv('DB_PORT', 'port'))
+                    return render_template('index.html')
+                else:
+                    return render_template('check.html')
+            else:
+                return render_template('check.html')
+    except Exception as e:
+        return render_template('error.html', error=e), 402
 
 
 @app.route("/post", methods=['POST'])
 def post():
     try:
         if request.form:
-                data = loads(request.form['data'])
-                with BytesIO(data['source'].encode()) as f, MRVread(f) as m:
-                    mol = next(m)
-                mol.standardize()
-                mol.aromatize()
-                stages = int(data['stage'])
-                available = bool(data['available'])
-                with db_session:
-                    if data['substructure']:
-                        return render_template("middle.html", molecules=substructure(mol), available=available,
-                                               tree='hard_tree', stages=stages)
+            data = loads(request.form['data'])
+            with BytesIO(data['source'].encode()) as f, MRVRead(f) as m:
+                mol = next(m)
+            mol.canonicalize()
+            stages = int(data['stage'])
+            available = bool(data['available'])
+            with db_session:
+                if data['substructure']:
+                    return render_template("middle.html", molecules=substructure(mol), available=available,
+                                           tree='hard_tree', stages=stages)
+                else:
+                    molecule = Molecule.find_structure(mol)
+                    if molecule and MoleculeReaction.exists(molecule=molecule, is_product=True):
+                        return redirect(
+                            url_for('easy_tree', target=molecule.id, available=available, stages=stages))
                     else:
-                        molecule = Molecule.find_structure(mol)
-                        if molecule and MoleculeReaction.exists(molecule=molecule, is_product=True):
-                            return redirect(
-                                url_for('easy_tree', target=molecule.id, available=available, stages=stages))
-                        else:
-                            return render_template("middle.html", molecules=similarity(mol), available=available,
-                                                   tree='easy_tree', stages=stages)
+                        return render_template("middle.html", molecules=similarity(mol), available=available,
+                                               tree='easy_tree', stages=stages)
     except Exception as e:
-        print(e)
-        return render_template('error.html'), 402
+        print(format_exc())
+        return render_template('error.html', error=e), 402
 
 
 @app.route("/easy_tree/<int(min=1):target>/<available>/<int(min=1):stages>")
@@ -65,11 +85,11 @@ def easy_tree(target, stages, available):
         else:
             available = False
         data = paths_of_synthesis_for_target_molecule(target, available, stages)
-        return render_template('response.html', title='Molecule synthesis paths after searching for similarity',
+        return render_template('response.html', title='Molecule synthesis paths after searching molecule in database',
                                data=data)
     except Exception as e:
-        print(e)
-        return render_template('error.html'), 402
+        print(format_exc())
+        return render_template('error.html', error=e), 402
 
 
 @app.route("/hard_tree/<int(min=1):target>/<available>/<list:reactions>/<int(min=1):stages>")
@@ -84,5 +104,5 @@ def hard_tree(target, available, reactions, stages):
     else:
         available = False
     data = paths_of_synthesis_for_substructure_search(target, available, reactions, stages - 1)
-    return render_template('response.html', title='Molecule synthesis paths after searching by substructure',
+    return render_template('response.html', title='Molecule synthesis paths after searching by substructure in database',
                            data=data)

@@ -17,13 +17,6 @@ COPY requirements.txt boot.sh ./
 RUN venv/bin/pip install --no-cache-dir -r requirements.txt && \
     venv/bin/pip install --no-cache-dir gunicorn
 
-COPY DATA DATA
-COPY USER USER
-WORKDIR /home/cimm/DATA
-RUN /home/cimm/venv/bin/pip install -e .
-WORKDIR /home/cimm/USER
-RUN /home/cimm/venv/bin/pip install -e .
-
 WORKDIR /home/cimm
 
 COPY fragmentor-2017.x bin/

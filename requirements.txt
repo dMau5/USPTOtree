@@ -2,5 +2,6 @@ psycopg2-binary
 pony
 LazyPony
 Flask
-git+https://github.com/cimm-kzn/CGRtools.git@master#egg=CGRtools[mrv]
-git+https://github.com/stsouko/CGRdb.git@master#egg=CGRdb
+CGRtools[mrv]
+git+https://github.com/stsouko/CGRdb.git@master#egg=CGRdb[postgres]
+git+https://github.com/pandylandy/CGRdbData.git@master#egg=CGRdbData

@@ -1,0 +1,34 @@
+body {
+    font-size: 130%;
+    font-family: arial;
+}
+
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+button {
+    border: 1px black solid;
+    border-radius: 3px;
+    padding: 5px;
+    }
+
+div {
+    position: relative;
+    text-align: center;
+}
+h1 {
+    margin-bottom: 15px;
+}
+select, input {
+    font-size: large;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px black solid;
+    border-radius: 3px;
+    background: white;
+}
+input:hover {
+    background: silver;
+}
